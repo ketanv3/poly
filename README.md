@@ -1,5 +1,7 @@
 # poly <img src="./docs/poly.svg" width="80" align="right" />
 
+[![Python Version](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/downloads/release/python-370/)
+[![Coverage](./docs/coverage.svg)]()
 [![Maintainability](https://api.codeclimate.com/v1/badges/7dcde6b92ad3bc7db5ac/maintainability)](https://codeclimate.com/github/ketanv3/poly/maintainability)
 
 Manage all your command line tools easily in one place!
@@ -34,7 +36,7 @@ python setup.py test
 Alternatively, tests can be run without building the module. To also report the code coverage, use the following command:
 
 ```bash
-python -m pytest --cov=flux --cov-report term-missing
+python -m pytest --cov=poly --cov-report term-missing
 ```
 
 ## Issues and Suggestions
