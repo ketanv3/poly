@@ -7,6 +7,56 @@
 Manage all your command line tools easily in one place!
 
 
+## Quick Start Guide
+
+#### Workspace
+
+`POLY_WORKSPACE` environment variable defines the root directory that containing all your executable commands. Add it to `.bashrc` / `.zshrc` or similar so that it's sourced every time a new shell is launched.
+
+```bash
+export POLY_WORKSPACE=~/poly_ws/
+```
+
+A workspace contains bunch of folders and files (leaf nodes) which form the searchable command path.
+```
+↳ poly_ws
+   ↳ foo
+      ↳ bar
+         ↳ hello_world.py
+   ↳ code
+      ↳ vscode.py
+      ↳ intellij.py
+   ↳ base64
+      ↳ encode.py
+      ↳ decode.py
+```
+
+#### Creating Commands
+
+Creating these commands is pretty easy in itself. We use [Click](https://click.palletsprojects.com/en/master/python3/) library to generate command line utilities.
+
+Here's a simple `hello-world.py` example:
+
+```python
+import click
+
+@click.command()
+@click.option('--name', required=True)
+@click.option('--count', default=1)
+def command(name, count):
+    for i in range(count):
+        print(f'Hello, {name}!')
+```
+
+#### Executing Commands
+
+To execute the above command:
+```bash
+poly foo bar hello_world --name poly --count 5
+```
+
+
+
 ## Installation
 
 Make sure you're running Python 3.6+. Run the following command to confirm.
