@@ -1,5 +1,7 @@
 # poly <img src="./docs/poly.svg" width="80" align="right" />
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/7dcde6b92ad3bc7db5ac/maintainability)](https://codeclimate.com/github/ketanv3/poly/maintainability)
+
 Manage all your command line tools easily in one place!
 
 
