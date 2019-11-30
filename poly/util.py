@@ -11,6 +11,9 @@ def get_workspace_dir():
     """
     poly_workspace = os.getenv('POLY_WORKSPACE')
     if poly_workspace is None:
+        raise PolyException("POLY_WORKSPACE is not configured")
+
+    if not os.path.isdir(poly_workspace):
         raise PolyException(f"'{poly_workspace}' is not a valid workspace")
 
     return poly_workspace.rstrip('/')
@@ -32,11 +35,11 @@ def get_import_path(workspace, argv):
             continue
 
         if not os.path.isfile(cwd + '.py'):
-            raise PolyException(f"'{cwd + '.py'}' not found")
+            raise PolyException(f"invalid command path: '{' '.join(argv[1:depth+2])}'")
 
         return cwd, depth + 2
 
-    raise PolyException(f"'{cwd}' is not the leaf")
+    raise PolyException(f"no leaf command yet: '{' '.join(argv[1:])}'")
 
 
 def load_module(import_path):
