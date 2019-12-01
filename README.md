@@ -57,7 +57,7 @@ poly foo bar hello_world --name poly --count 5
 
 
 
-## Installation
+## Manual Installation
 
 Make sure you're running Python 3.6+. Run the following command to confirm.
 ```bash
