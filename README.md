@@ -9,6 +9,16 @@ Manage all your command line tools easily in one place!
 
 ## Quick Start Guide
 
+#### Easy Install
+
+Poly can be installed easily with the following command:
+
+```bash
+curl https://raw.githubusercontent.com/ketanv3/poly/master/scripts/install.sh -o install-poly.sh && chmod 755 ./install-poly.sh && ./install-poly.sh
+```
+
+Depending on your configuration, you might need to run this command with `sudo`. If this fails for you, follow the manual install procedure given below.
+
 #### Workspace
 
 `POLY_WORKSPACE` environment variable defines the root directory that containing all your executable commands. Add it to `.bashrc` / `.zshrc` or similar so that it's sourced every time a new shell is launched.
